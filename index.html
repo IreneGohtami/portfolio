@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>[Your Name] — Portfolio</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <h1 class="site-header__name" data-placeholder>[Your Name]</h1>
+    <p class="site-header__title" data-placeholder>[Professional Title]</p>
+    <nav class="site-header__links" aria-label="Contact and profiles">
+      <a href="https://github.com/[github-handle]" data-placeholder>GitHub</a>
+      <a href="https://www.linkedin.com/in/[linkedin-handle]" data-placeholder>LinkedIn</a>
+      <a href="mailto:[you@example.com]" data-placeholder>Email</a>
+    </nav>
+  </header>
+  <main id="main" class="projects">
+    <section class="showcase" aria-labelledby="tuinet-v2-title">
+      <h2 class="showcase__title" id="tuinet-v2-title">Tuinet V2</h2>
+      <p class="showcase__desc">A rebuild of an airline and travel booking management platform, covering bookings, passengers, services, charges, and vouchers. The new interface modernises day-to-day operations work and ships with both light and dark themes so agents can choose the look that suits their environment.</p>
+      <ul class="showcase__stack" aria-label="Technology stack">
+        <li>Next.js</li>
+        <li>Dark mode</li>
+      </ul>
+      <video class="showcase__video"
+             controls
+             preload="none"
+             poster="assets/tuinet-v2/thumbnail.jpg"
+             aria-labelledby="tuinet-v2-title">
+        <source src="assets/tuinet-v2/demo.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+        <a href="assets/tuinet-v2/demo.mp4">Download the demo video</a>
+      </video>
+    </section>
+    <section class="showcase" aria-labelledby="holiday-title">
+      <h2 class="showcase__title" id="holiday-title">Holiday Web &amp; Holiday CMS</h2>
+      <p class="showcase__desc">The Kenya Airways Holidays landing site paired with a headless CMS. Every page is assembled from CMS-managed content blocks, and each tenant's colours, fonts, and logo are injected at runtime, so a single frontend can be white-labelled across multiple holiday brands.</p>
+      <ul class="showcase__stack" aria-label="Technology stack">
+        <li>Next.js 16</li>
+        <li>Strapi v5</li>
+        <li>AWS ECS</li>
+        <li>Multi-tenant theming</li>
+      </ul>
+      <video class="showcase__video"
+             controls
+             preload="none"
+             poster="assets/holiday/thumbnail.jpg"
+             aria-labelledby="holiday-title">
+        <source src="assets/holiday/demo.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+        <a href="assets/holiday/demo.mp4">Download the demo video</a>
+      </video>
+    </section>
+    <section class="showcase" aria-labelledby="gds-connector-title">
+      <h2 class="showcase__title" id="gds-connector-title">GDS connector (PNR Lookup)</h2>
+      <p class="showcase__desc">A web tool that looks up flight bookings (PNRs) across Amadeus and Sabre from a single search box, returning passengers, itinerary, fares, tickets, and ancillaries in one unified view. The same connectors are also packaged as MCP servers so the lookups can be driven by AI agents.</p>
+      <ul class="showcase__stack" aria-label="Technology stack">
+        <li>FastAPI</li>
+        <li>Amadeus</li>
+        <li>Sabre</li>
+        <li>MCP</li>
+      </ul>
+      <video class="showcase__video"
+             controls
+             preload="none"
+             poster="assets/gds-connector/thumbnail.jpg"
+             aria-labelledby="gds-connector-title">
+        <source src="assets/gds-connector/demo.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+        <a href="assets/gds-connector/demo.mp4">Download the demo video</a>
+      </video>
+    </section>
+    <section class="showcase" aria-labelledby="blinders-title">
+      <h2 class="showcase__title" id="blinders-title">Blinders.ai</h2>
+      <p class="showcase__desc">Turns a single YouTube URL into an end-to-end AI content analysis: it scrapes the video, runs machine-learning models to summarise the content and read its sentiment, then forecasts how the video will perform over the next six months across views, likes, comments, and engagement. The result is a quick read on what a video is about and where it is headed.</p>
+      <ul class="showcase__stack" aria-label="Technology stack">
+        <li>Next.js</li>
+        <li>Supabase</li>
+        <li>Mistral-7B / flan-t5 on Modal</li>
+      </ul>
+      <video class="showcase__video"
+             controls
+             preload="none"
+             poster="assets/blinders/thumbnail.jpg"
+             aria-labelledby="blinders-title">
+        <source src="assets/blinders/demo.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+        <a href="assets/blinders/demo.mp4">Download the demo video</a>
+      </video>
+    </section>
+    <section class="showcase" aria-labelledby="virtual-economy-title">
+      <h2 class="showcase__title" id="virtual-economy-title">Virtual Economy - SEA</h2>
+      <p class="showcase__desc">A web-based multiplayer economic tycoon game set in Southeast Asia. Players buy land on a procedurally generated map, build factories, and run multi-level commodity supply chains, trading finished goods on a shared marketplace while climbing a net-worth leaderboard. It runs as a server-authoritative modular monolith so game state stays consistent across every player.</p>
+      <ul class="showcase__stack" aria-label="Technology stack">
+        <li>NestJS</li>
+        <li>Next.js</li>
+        <li>Postgres</li>
+        <li>Redis</li>
+        <li>BullMQ</li>
+        <li>Turborepo</li>
+      </ul>
+      <video class="showcase__video"
+             controls
+             preload="none"
+             poster="assets/virtual-economy/thumbnail.jpg"
+             aria-labelledby="virtual-economy-title">
+        <source src="assets/virtual-economy/demo.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+        <a href="assets/virtual-economy/demo.mp4">Download the demo video</a>
+      </video>
+    </section>
+    <section class="showcase" aria-labelledby="pawtner-title">
+      <h2 class="showcase__title" id="pawtner-title">Pawtner</h2>
+      <p class="showcase__desc">A pet breeder finder that helps future pet parents meet the right puppy. Visitors browse puppies from reputable breeders, favorite the ones they love, and open breeder profiles to learn more, then chat directly with a breeder and apply for or reserve a puppy — all in one place.</p>
+      <ul class="showcase__stack" aria-label="Technology stack">
+        <li>Gatsby</li>
+        <li>Chakra UI</li>
+        <li>Firebase</li>
+        <li>Auth0</li>
+      </ul>
+      <video class="showcase__video"
+             controls
+             preload="none"
+             poster="assets/pawtner/thumbnail.jpg"
+             aria-labelledby="pawtner-title">
+        <source src="assets/pawtner/demo.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+        <a href="assets/pawtner/demo.mp4">Download the demo video</a>
+      </video>
+    </section>
+    <section class="showcase" aria-labelledby="pacman-title">
+      <h2 class="showcase__title" id="pacman-title">Pacman</h2>
+      <p class="showcase__desc">A classic Pac-Man clone built from scratch in C++ on a custom tile and sprite 2D engine. It features a navigable maze, an animated Pac-Man, a chasing ghost, dot-eating with score and lives, two levels to clear, and dedicated win and game-over screens.</p>
+      <ul class="showcase__stack" aria-label="Technology stack">
+        <li>C++</li>
+        <li>Custom 2D engine</li>
+      </ul>
+      <video class="showcase__video"
+             controls
+             preload="none"
+             poster="assets/pacman/thumbnail.jpg"
+             aria-labelledby="pacman-title">
+        <source src="assets/pacman/demo.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+        <a href="assets/pacman/demo.mp4">Download the demo video</a>
+      </video>
+    </section>
+  </main>
+  <footer class="site-footer">
+    <p class="site-footer__copy" data-placeholder>© 2026 Irene Gohtami</p>
+    <nav class="site-footer__links" aria-label="Footer links">
+      <a href="https://www.linkedin.com/in/irene-gohtami-518035110" data-placeholder>LinkedIn</a>
+      <a href="mailto:[irene.goh94@gmail.com]" data-placeholder>Email</a>
+    </nav>
+  </footer>
+</body>
+</html>

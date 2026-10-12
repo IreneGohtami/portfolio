@@ -1,0 +1,225 @@
+/* ==========================================================================
+   Portfolio — styles.css
+   Single fixed light theme (Req 5.3): no prefers-color-scheme dark branch,
+   no theme-toggle control.
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   Design tokens (Req 5.1, 5.2)
+   -------------------------------------------------------------------------- */
+:root {
+  /* Color — light, professional palette (Req 5.1, 5.4) */
+  --color-bg: #f7f8fa;          /* light page background */
+  --color-surface: #ffffff;     /* showcase card surface */
+  --color-text: #1a1d21;        /* near-black body text — high contrast on light bg */
+  --color-text-muted: #4a5057;  /* secondary text, still >= 4.5:1 on surfaces */
+  --color-accent: #1a66d6;      /* links / focus; >= 4.5:1 on bg (5.05:1) and surface (5.36:1) */
+  --color-border: #e2e5ea;      /* hairline separators */
+  --color-chip-bg: #eef1f6;     /* tech-stack chip background */
+  --color-chip-text: #1a1d21;   /* chip text */
+
+  /* Spacing scale (Req 5.2) */
+  --space-1: 0.5rem;
+  --space-2: 1rem;
+  --space-3: 1.5rem;
+  --space-4: 2.5rem;
+  --space-section: 4rem;        /* vertical separation between showcases */
+
+  /* Layout */
+  --max-content-width: 56rem;   /* ~896px constrained reading width */
+  --radius: 10px;
+
+  /* Focus */
+  --focus-ring: 3px solid var(--color-accent);
+}
+
+/* --------------------------------------------------------------------------
+   Reset / base
+   -------------------------------------------------------------------------- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
+    Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+  line-height: 1.6;
+}
+
+/* --------------------------------------------------------------------------
+   Showcase surface cards (Req 5.1, 5.2)
+   Each showcase sits on a light surface card with rounded corners, and the
+   showcases are separated vertically by --space-section.
+   -------------------------------------------------------------------------- */
+.showcase {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: var(--space-3);
+}
+
+/* Vertical separation between showcases is provided by the .projects grid
+   `gap` (see Layout and responsiveness below), so no margin-top rule here —
+   the grid gap is the single source of vertical spacing. */
+/* --------------------------------------------------------------------------
+   Site header (Req 5.1, 5.2)
+   Clean identity block: prominent name, muted subtitle, horizontal link row.
+   -------------------------------------------------------------------------- */
+.site-header {
+  padding: var(--space-4) var(--space-2) var(--space-3);
+}
+
+.site-header__name {
+  margin: 0;
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.site-header__title {
+  margin: var(--space-1) 0 0;
+  color: var(--color-text-muted);
+  font-size: 1.125rem;
+}
+
+.site-header__links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  margin-top: var(--space-2);
+}
+
+/* --------------------------------------------------------------------------
+   Links — header + footer nav anchors (Req 5.1, 5.4)
+   Accent color, always underlined (not identified by color alone), with a
+   subtle hover state.
+   -------------------------------------------------------------------------- */
+.site-header__links a,
+.site-footer__links a {
+  color: var(--color-accent);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.site-header__links a:hover,
+.site-footer__links a:hover {
+  text-decoration-thickness: 2px;
+  opacity: 0.85;
+}
+
+/* --------------------------------------------------------------------------
+   Showcase title + description (Req 5.1, 5.2)
+   -------------------------------------------------------------------------- */
+.showcase__title {
+  margin: 0 0 var(--space-1);
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 1.25;
+}
+
+.showcase__desc {
+  margin: 0 0 var(--space-2);
+  color: var(--color-text-muted);
+}
+
+/* --------------------------------------------------------------------------
+   Tech-stack chips (Req 5.1, 5.2)
+   The <ul> is a wrapping inline row; each <li> renders as a pill/tag chip.
+   -------------------------------------------------------------------------- */
+.showcase__stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-1);
+  margin: 0 0 var(--space-3);
+  padding: 0;
+  list-style: none;
+}
+
+.showcase__stack li {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  background: var(--color-chip-bg);
+  color: var(--color-chip-text);
+  border-radius: 999px;
+  font-size: 0.875rem;
+  line-height: 1.4;
+}
+
+/* --------------------------------------------------------------------------
+   Site footer (Req 5.1, 5.2)
+   Muted, smaller text separated by a top border; links in a horizontal row.
+   -------------------------------------------------------------------------- */
+.site-footer {
+  margin-top: var(--space-section);
+  padding: var(--space-3) var(--space-2);
+  border-top: 1px solid var(--color-border);
+  color: var(--color-text-muted);
+  font-size: 0.875rem;
+}
+
+.site-footer__copy {
+  margin: 0 0 var(--space-1);
+}
+
+.site-footer__links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+/* --------------------------------------------------------------------------
+   Layout and responsiveness (Req 7.1, 7.2)
+   -------------------------------------------------------------------------- */
+
+/* Constrain and center the top-level content. On large screens (>= 1024px)
+   the container stops growing at --max-content-width, preserving readable
+   line lengths; margin-inline: auto keeps it centered. */
+.site-header,
+.projects,
+.site-footer {
+  max-width: var(--max-content-width);
+  margin-inline: auto;
+  padding-inline: var(--space-2);
+}
+
+/* Single-column vertical flow at all widths. Single column is the base/mobile
+   state, so small screens (<= 600px) stack with no extra rules, and no
+   breakpoint reintroduces multiple columns on narrow screens. The grid `gap`
+   is the single source of vertical separation between showcases. */
+.projects {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-section);
+}
+
+/* --------------------------------------------------------------------------
+   Fluid video sizing (Req 7.3)
+   Each demo video scales to its containing showcase card width and never
+   overflows the viewport at any width: block-level, full container width,
+   capped at 100%, with intrinsic aspect ratio preserved (height: auto).
+   -------------------------------------------------------------------------- */
+.showcase__video {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  border-radius: var(--radius);
+}
+/* --------------------------------------------------------------------------
+   Accessible focus styles (Req 6.3, 6.4)
+   A visible focus indicator for keyboard navigation on header/footer links
+   and the video element, using the accent focus-ring token. Native
+   focusability is preserved: no `outline: none` without replacement, and no
+   element is removed from the tab order. `:focus-visible` keeps the ring to
+   keyboard interaction for a cleaner mouse experience.
+   -------------------------------------------------------------------------- */
+a:focus-visible,
+video:focus-visible {
+  outline: var(--focus-ring);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
