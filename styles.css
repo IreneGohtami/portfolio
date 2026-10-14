@@ -79,7 +79,7 @@
   --color-surface: #ffffff;     /* showcase card surface */
   --color-text: #1a1d21;        /* near-black body text — high contrast on light bg */
   --color-text-muted: #4a5057;  /* secondary text, still >= 4.5:1 on surfaces */
-  --color-accent: #1a66d6;      /* links / focus; >= 4.5:1 on bg (5.05:1) and surface (5.36:1) */
+  --color-accent: #bf3971;      /* rose from bg image; >= 4.5:1 on bg (4.89:1) and surface (5.20:1) */
   --color-border: #e2e5ea;      /* hairline separators */
   --color-chip-bg: #eef1f6;     /* tech-stack chip background */
   --color-chip-text: #1a1d21;   /* chip text */
