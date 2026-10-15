@@ -131,6 +131,32 @@ body {
 }
 
 /* --------------------------------------------------------------------------
+   Animated background layer (Vanta Birds)
+   A fixed, full-viewport layer behind all content. Vanta injects its <canvas>
+   here when JS runs; otherwise the body's bg-img.avif remains the backdrop.
+   `position: relative; z-index: 0` on the content containers keeps them above
+   this layer without needing per-element z-index.
+   -------------------------------------------------------------------------- */
+#vanta-bg {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none; /* let clicks/scroll pass through to the page */
+}
+
+/* Vanta re-enables pointer events on its own canvas for mouse/touch controls. */
+#vanta-bg canvas {
+  pointer-events: auto;
+}
+
+.site-header,
+.projects,
+.site-footer {
+  position: relative;
+  z-index: 0;
+}
+
+/* --------------------------------------------------------------------------
    Showcase surface cards (Req 5.1, 5.2)
    Each showcase sits on a light surface card with rounded corners, and the
    showcases are separated vertically by --space-section.

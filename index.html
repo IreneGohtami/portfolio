@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+  <div id="vanta-bg" aria-hidden="true"></div>
   <header class="site-header">
     <h1 class="site-header__name">Irene Gohtami</h1>
     <p class="site-header__title">Technical Lead | Product Engineer</p>
@@ -179,6 +180,38 @@
   <script>
     // Fill in the current year; a static fallback year is in the HTML for no-JS.
     document.getElementById("footer-year").textContent = new Date().getFullYear();
+  </script>
+
+  <!-- Animated background (self-hosted three.js + Vanta Birds). The CSS keeps
+       assets/bg-img.avif as the static fallback; Vanta renders over it only when
+       JS runs and the user has not requested reduced motion. -->
+  <script src="assets/js/three.r134.min.js"></script>
+  <script src="assets/js/vanta.birds.min.js"></script>
+  <script>
+    (function () {
+      var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      if (reduce || typeof VANTA === "undefined" || !VANTA.BIRDS) return;
+      VANTA.BIRDS({
+        el: "#vanta-bg",
+        mouseControls: true,
+        touchControls: true,
+        gyroControls: false,
+        minHeight: 200.00,
+        minWidth: 200.00,
+        scale: 1.00,
+        scaleMobile: 1.00,
+        backgroundColor: 0xf7f8fa,
+        color1: 0xbf3971,
+        color2: 0x1a66d6,
+        birdSize: 1.50,
+        wingSpan: 30.00,
+        speedLimit: 6.00,
+        separation: 92.00,
+        alignment: 65.00,
+        cohesion: 37.00,
+        quantity: 3.00
+      });
+    })();
   </script>
 </body>
 </html>

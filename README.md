@@ -23,9 +23,3 @@ Live site: https://irenegohtami.github.io/portfolio/
 - **Pacman** — a classic Pac-Man clone written from scratch in C++ on a custom
   2D tile and sprite engine.
 
-## Built with
-
-Plain, hand-authored HTML and CSS — no framework, no build step. Typography uses
-the self-hosted [Mona Sans](https://github.com/github/mona-sans) and
-[Hubot Sans](https://github.com/github/hubot-sans) fonts, and the site is hosted
-on GitHub Pages.
